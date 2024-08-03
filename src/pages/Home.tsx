@@ -1,4 +1,4 @@
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import InputBox from "../components/InputBox";
 import {
   Select,
@@ -8,21 +8,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { modelSelectedState } from "@/store/atoms";
-import { useEffect } from "react";
+import { renderContent } from "@/components/RenderContent";
 
 function Home() {
-  const [modelSelected, setModelSelected] = useRecoilState(modelSelectedState);
+  const setModelSelected = useSetRecoilState(modelSelectedState);
   const handleSelect = (value: string) => {
     setModelSelected(value);
   };
 
-  useEffect(() => {
-    console.log(modelSelected);
-  }, [modelSelected]);
   return (
     <div className="flex flex-col h-screen">
       <div className="flex-grow px-6 md:px-12 lg:px-20">
-        <div className="text-white font-semibold text-xl">CHATBOT AI</div>
+        <div className="text-white font-semibold text-xl">
+          
+          {renderContent()}
+        </div>
       </div>
       <div className="px-6 md:px-12 lg:px-20 pb-4 space-y-1.5">
         <Select onValueChange={handleSelect}>

@@ -9,3 +9,8 @@ export const modelPrompt = atom<string | null>({
   key: "modelPropmt",
   default: null,
 });
+
+export const responseState = atom({
+  key: 'responseState',
+  default: null
+})

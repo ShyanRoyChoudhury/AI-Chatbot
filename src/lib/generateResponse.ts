@@ -19,7 +19,6 @@ export const generateResponse = async (
   };
   try {
     const res = await axios.request(options);
-    console.log(res);
     return res;
   } catch (e) {
     console.error(e);

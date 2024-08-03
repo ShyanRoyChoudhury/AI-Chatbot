@@ -5,7 +5,7 @@ import MessageSvg from "../assets/message_square_list.svg?react";
 
 function Navigation() {
   return (
-    <div className="h-screen bg-black text-white flex">
+    <nav className="h-screen bg-black text-white flex fixed w-80">
       <div className="border-r border-[#262626] px-3 py-6 flex flex-col justify-between">
         <div className="p-1.5 hover:bg-[#2b2a2a] rounded-md">
           <MessageSvg />
@@ -26,7 +26,7 @@ function Navigation() {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
