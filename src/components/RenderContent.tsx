@@ -43,7 +43,7 @@ export const renderContent = () => {
         const { gpt_generated_sentences } = responseData.data.content.data;
         return (
             <div className="space-y-4 p-4">
-            <div className="rounded-md p-4 bg-black ml-auto w-3/5 font-normal text-md">{prompt}</div>
+            <div className="rounded-md p-4 bg-black ml-auto w-3/5 font-normal text-sm">{prompt}</div>
             <div className="bg-black p-4 w-3/5">
               <div>Detection Complete</div>
               <div>

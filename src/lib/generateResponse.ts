@@ -11,7 +11,7 @@ export const generateResponse = async (
 
   const options = {
     method: "POST",
-    url: `${process.env.REACT_APP_URL}/prompt`,
+    url: `${process.env.BACKEND_URL}/prompt`,
     headers: {
       "Content-Type": "application/json",
     },
