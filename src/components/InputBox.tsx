@@ -4,7 +4,7 @@ import SendSvg from "../assets/send_vector_icon.svg?react";
 import LoaderSvg from "../assets/loader.svg?react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { generateResponse } from "@/lib/generateResponse";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function InputBox() {
   const [input, setInput] = useState<string>("")

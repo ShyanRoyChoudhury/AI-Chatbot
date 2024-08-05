@@ -4,10 +4,9 @@ import { modelPrompt, responseState } from "@/store/atoms";
 import { useRecoilValue } from "recoil";
 
 
-export const renderContent = () => {
+export const RenderContent = () => {
     const responseData = useRecoilValue(responseState);
     const prompt = useRecoilValue(modelPrompt);
-
     if (!responseData || responseData.status !== "Success") {
       return null;
     }

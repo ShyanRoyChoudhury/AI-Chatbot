@@ -8,7 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { modelSelectedState } from "@/store/atoms";
-import { renderContent } from "@/components/RenderContent";
+import { RenderContent } from "@/components/RenderContent";
 
 function Home() {
   const setModelSelected = useSetRecoilState(modelSelectedState);
@@ -21,7 +21,7 @@ function Home() {
       <div className="flex-grow px-6 md:px-12 lg:px-20">
         <div className="text-white font-semibold text-xl">
           
-          {renderContent()}
+          {RenderContent()}
         </div>
       </div>
       <div className="px-6 md:px-12 lg:px-20 pb-4 space-y-1.5">

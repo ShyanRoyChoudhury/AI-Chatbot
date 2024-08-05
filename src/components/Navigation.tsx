@@ -2,6 +2,7 @@
 
 import ProfileSvg from "../assets/profile_round.svg?react";
 import MessageSvg from "../assets/message_square_list.svg?react";
+import RecentChats from "./RecentChats";
 
 function Navigation() {
   return (
@@ -23,6 +24,9 @@ function Navigation() {
             <button className="text-black bg-white hover:bg-gray-200 px-6 py-1 rounded-md w-full">
               + New Chat
             </button>
+          </div>
+          <div className="my-1.5">
+            <RecentChats />
           </div>
         </div>
       </div>
