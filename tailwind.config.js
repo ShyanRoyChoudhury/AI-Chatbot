@@ -31,6 +31,13 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      maxHeight: {
+        'screen-1/4': '25vh',
+        'screen-1/3': '33.3333vh',
+        'screen-1/2': '50vh',
+        'screen-2/3': '66.6666vh',
+        'screen-3/4': '75vh',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

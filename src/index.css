@@ -5,3 +5,22 @@
 body {
   background-color: #181818;
 }
+
+/* RecentChats.css */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "auto" or "thin" (supported in Firefox) */
+  scrollbar-color: #4A5568 #000000; /* scroll thumb and track color */
+
+  /* WebKit (Safari/Chrome) */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #2D3748; /* color of the track */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #4A5568; /* color of the scroll thumb */
+    border-radius: 6px;
+    border: 2px solid #2D3748; /* color of the scrollbar border */
+  }
+}

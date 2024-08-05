@@ -46,13 +46,14 @@ function RecentChats() {
 
   const handleClick = async (chat:any) => {
     const res = await getPrompt(chat._id)
+    console.log(res)
     setResponseData(res?.data)
     setPrompt(res?.data.data.prompt)
   }
   return (
-    <div className="w-full p-1 h-full space-y-2">
+    <div className="w-full p-1 h-full space-y-2 flex flex-col">
       <div>Recent Chats</div>
-      <div className="space-y-1.5 ">
+      <div className="space-y-1.5 grow basis-0 overflow-y-scroll custom-scrollbar">
         {chats.map((chat:any, index) => (
           <div key={index} className="bg-[#262626] rounded-md px-2 hover:bg-black hover:border hover:border-[#262626]
                 py-1 text-sm font-light line-clamp-2"
