@@ -36,6 +36,17 @@ function RecentChats() {
     fetchChats();
   }, []);
 
+  const handleClick = async (chat:any) => {
+    try{
+      const res = await getPrompt(chat._id)
+      setResponseData(res?.data)
+      setPrompt(res?.data.data.prompt)
+    }catch(e){
+      console.error("Error fetching chats")
+      setError("Error fetching chats");
+        setLoading(false);
+    }
+  }
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -44,12 +55,6 @@ function RecentChats() {
     return <div>Error: {error}</div>;
   }
 
-  const handleClick = async (chat:any) => {
-    const res = await getPrompt(chat._id)
-    console.log(res)
-    setResponseData(res?.data)
-    setPrompt(res?.data.data.prompt)
-  }
   return (
     <div className="w-full p-1 h-full space-y-2 flex flex-col">
       <div>Recent Chats</div>

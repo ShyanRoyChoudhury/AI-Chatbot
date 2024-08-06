@@ -2,13 +2,13 @@
 import { modelPrompt, modelSelectedState, responseState } from "@/store/atoms";
 import SendSvg from "../assets/send_vector_icon.svg?react";
 import LoaderSvg from "../assets/loader.svg?react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { generateResponse } from "@/lib/generateResponse";
 import { useState } from "react";
 
 function InputBox() {
   const [input, setInput] = useState<string>("")
-  const [prompt, setPrompt] = useRecoilState(modelPrompt);
+  const  setPrompt = useSetRecoilState(modelPrompt);
   const [loaderActive, setLoaderActive] = useState<boolean>(false);
   const setResponseData = useSetRecoilState(responseState);
   const modelSelected = useRecoilValue(modelSelectedState);
@@ -20,17 +20,19 @@ function InputBox() {
 
   const handleSend = async () => {
     try{
-      console.log('prompt:', prompt, 'modelSelected:', modelSelected)
       if (input && modelSelected) {
         setLoaderActive(true)
         const response = await generateResponse(input, modelSelected);
         setPrompt(input)
         if(response?.status === 200){
           const data = response?.data;
+          console.log('call from textbox',data)
           setResponseData(data);
           setLoaderActive(false)
           setInput("")
         }
+      }else{
+        alert('input id and model to generate response')
       }
     }catch(e){
       setLoaderActive(false)

@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-RUN yarn && yarn add typescript -g serve -g
+RUN yarn && yarn add typescript -g serve -g pm2 --global
 
 COPY . .
 
@@ -16,4 +16,4 @@ EXPOSE 3003
 
 RUN yarn build
 
-CMD [ "serve", "-s", "dist", "-p", "3003"]
+CMD [ "yarn", "start" ]
