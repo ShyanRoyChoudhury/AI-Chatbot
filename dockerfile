@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 
-RUN yarn && yarn add typescript -g serve -g pm2 --global
+RUN yarn && yarn add typescript -g serve -g 
 
 COPY . .
 
